@@ -34,22 +34,26 @@ body {
 }
 
 .keys {
+    position: relative;
     height: 65%;
+    width: 100%;
     margin-top: 1em;
     border-radius: 0 0 .5em .5em;
     display: flex;
+    justify-content: center;
+    gap: .3em;
     overflow: hidden;
 }
 
-.keys__white {
+/* .keys__white {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: .3em;
-}
+} */
 
 .white__key {
-    position: relative;
+    /* position: relative; */
     width: calc(100% / 7);
     background-color: var(--clr-keys-white);
     box-shadow: 0px 0px 5px inset hsl(0, 0%, 70%), -6px -15px 8px inset hsl(0, 0%, 30%);
@@ -69,12 +73,33 @@ body {
     position: absolute;
     z-index: 1;
     top: 0;
-    right: -30%;
+    /* right: -30%; */
     max-width: 40rem;
-    width: 60%;
-    height: 50%;
+    /* width: 60%; */
+    width: 8%;
+    height: 55%;
     background-color: hsl(0, 0%, 20%);
     box-shadow: inset -5px -10px 2px hsl(0, 0%, 0%), 5px 0px 2px inset hsl(0, 0%, 0%);
+}
+
+.c_sharp {
+    left: 10%;
+}
+
+.d_sharp {
+    left: 24%;
+}
+
+.f_sharp {
+    right: 38.5%
+}
+
+.g_sharp {
+    right: 24%;
+}
+
+.h_sharp {
+    right: 10%;
 }
 
 .black__key:hover {
