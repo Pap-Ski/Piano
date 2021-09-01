@@ -1,4 +1,5 @@
 :root {
+    /* --clr-piano-bg: hsl(249, 66%, 75%); */
     --clr-piano-bg: hsl(0, 1%, 68%);
     --clr-keys-white: rgb(255, 255, 255);
 }
@@ -22,7 +23,8 @@ body {
     height: 80%;
     border-radius: .8em;
     padding: 2em;
-    box-shadow: -13px -13px 20px hsl(0, 1%, 72%), 13px 13px 20px hsl(0, 1%, 37%);
+    /* box-shadow: -13px -13px 20px hsl(0, 1%, 72%), 13px 13px 20px hsl(0, 1%, 37%); */
+    box-shadow: 12px 12px 16px 0 hsla(0, 0%, 0%, 0.25), -8px -8px 12px 0 hsla(0, 0%, 100%, 0.3);
 }
 
 .control-panel {
@@ -30,7 +32,7 @@ body {
     height: 30%;
     border-radius: .5em .5em 0 0;
     /* background-color: var(--clr-keys-white); */
-    box-shadow: inset -8px -8px 15px hsl(0, 1%, 75%), inset 8px 8px 15px hsl(0, 1%, 37%);
+    box-shadow: inset -8px -8px 15px hsl(0, 0%, 75%), inset 8px 8px 15px hsl(0, 0%, 37%);
 }
 
 .keys {
@@ -84,6 +86,7 @@ body {
 
 .c_sharp {
     left: 10%;
+    color: hsl(0, 0%, 82%);
 }
 
 .d_sharp {
@@ -98,7 +101,7 @@ body {
     right: 24%;
 }
 
-.h_sharp {
+.a_sharp {
     right: 10%;
 }
 
