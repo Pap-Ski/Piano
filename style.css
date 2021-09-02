@@ -2,6 +2,8 @@
     /* --clr-piano-bg: radial-gradient( rgb(255, 255, 255), rgb(148, 189, 148)); */
     --clr-piano-bg: hsl(0, 1%, 68%);
     --clr-keys-white: rgb(255, 255, 255);
+    --bxs-bottom-right: 12px 12px 16px 0 hsla(0, 0%, 0%, 0.25);
+    --bxs-top-left: -8px -8px 12px 0 hsla(0, 0%, 100%, 0.3);
 }
 
 * {
@@ -24,15 +26,78 @@ body {
     border-radius: .8em;
     padding: 2em;
     /* box-shadow: -13px -13px 20px hsl(0, 1%, 72%), 13px 13px 20px hsl(0, 1%, 37%); */
-    box-shadow: 12px 12px 16px 0 hsla(0, 0%, 0%, 0.25), -8px -8px 12px 0 hsla(0, 0%, 100%, 0.3);
+    box-shadow: var(--bxs-top-left), var(--bxs-bottom-right);
 }
 
 .control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* border: 2px solid black; */
     height: 30%;
     border-radius: .5em .5em 0 0;
     /* background-color: var(--clr-keys-white); */
     box-shadow: inset -8px -8px 15px hsl(0, 0%, 75%), inset 8px 8px 15px hsl(0, 0%, 37%);
+}
+
+.octave_panel {
+    /* border: 2px solid black; */
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.octave_number {
+    /* border: 1px solid black; */
+    border-radius: 2rem;
+    font-size: 7vmin;
+    padding: .5em;
+    box-shadow: inset var(--bxs-top-left), inset var(--bxs-bottom-right);
+}
+
+.change_octave {
+    background: transparent;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 0;
+    box-shadow: var(--bxs-top-left), var(--bxs-bottom-right);
+    transition: all .3s ease;
+}
+
+.change_octave[disabled] {
+    box-shadow: inset var(--bxs-top-left), inset var(--bxs-bottom-right);
+}
+
+.change_octave:hover {
+    cursor: pointer;
+}
+
+.up:hover {
+    transform: translateY(-10%);
+}
+
+.down:hover {
+    transform: translateY(10%);
+}
+
+.up::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0d8";
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.down::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0d7";
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.down[disabled] {
+    box-shadow: inset var(--bxs-top-left), inset var(--bxs-bottom-right);
 }
 
 .keys {

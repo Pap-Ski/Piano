@@ -6,10 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piano</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <section class="piano">
-      <div class="control-panel"></div>
+      <div class="control-panel">
+        <div class="octave_panel">
+          <button id="incOctave" class="change_octave up"></button>
+          <p class="octave_number">5</p>
+          <button id="decOctave" class="change_octave down"></button>
+        </div>
+      </div>
       <div class="keys">
         <div data-key="a" id="note_c" class="white__key">
           <audio>
