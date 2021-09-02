@@ -118,8 +118,8 @@ body {
     }
     .piano {
         transform: rotate(90deg);
-        height: 40%;
-        width: 180%;
+        height: 45%;
+        width: 150%;
         max-width: 846px;
     }
 }
