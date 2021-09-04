@@ -21,6 +21,7 @@ function playNoteOnKeyDown(e) {
     if (e.key === key.getAttribute("data-key")) {
       audio.currentTime = 0;
       audio.play();
+      console.log(audio);
       animateKey(key);
     }
   });
@@ -34,26 +35,51 @@ function animateKey(key) {
   });
 }
 
-// CHANGING THE OCTAVE OF THE NOTES
-/// Done by changing the numeric character in the audio src string with the user's preference
 let incOctave = document.querySelector("#incOctave");
 let decOctave = document.querySelector("#decOctave");
 let minOct = 3;
 let maxOct = 5;
 let octaveNumber = document.querySelector(".octave_number");
 
-// TO BE DONE LATER 👇🏽
+incOctave.addEventListener("click", () => {
+  octaveNumber.textContent++;
+  if (octaveNumber.textContent > maxOct) {
+    octaveNumber.textContent--;
+    return;
+  } else if (octaveNumber.textContent === maxOct) {
+    incOctave.disabled = true; // not working
+  } else {
+    allKeys.forEach((key) => {
+      changeAudioSrc(key);
+    });
+  }
+});
 
-// incOctave.addEventListener("click", () => {
-//   octaveNumber.textContent++;
-//   allKeys.forEach((key) => {
-//     let noteSound = key.children[0].children[0];
-//     let noteSoundArr = noteSound.src.split("");
-//     // noteSound.src.replace(
-//     //   `${noteSound.src.substr(-5, 1)}`,
-//     //   `${octaveNumber.textContent}`
-//     // );
-//     // console.log(octaveNumber.textContent);
-//     console.log(noteSoundArr.search("5"));
-//   });
-// });
+decOctave.addEventListener("click", () => {
+  octaveNumber.textContent--;
+  if (octaveNumber.textContent < minOct) {
+    octaveNumber.textContent++;
+    return;
+  } else if (octaveNumber.textContent === minOct) {
+    decOctave.disabled = true; // not working
+  } else {
+    allKeys.forEach((key) => {
+      changeAudioSrc(key);
+    });
+  }
+});
+
+// CHANGING THE OCTAVE OF THE NOTES
+/// Done by changing the numeric character in the audio src string with the user's preference
+function changeAudioSrc(audioParent) {
+  let noteSound = audioParent.children[0];
+  let noteSoundArr = noteSound.src.split("");
+  for (let i = noteSoundArr.length - 2; i >= 0; i--) {
+    if (!isNaN(noteSoundArr[i])) {
+      noteSoundArr[i] = octaveNumber.textContent;
+      break;
+    }
+  }
+
+  noteSound.src = noteSoundArr.join("");
+}

@@ -61,7 +61,8 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    border: 0;
+    border: none;
+    outline: none;
     box-shadow: var(--bxs-top-left), var(--bxs-bottom-right);
     transition: all .3s ease;
 }
