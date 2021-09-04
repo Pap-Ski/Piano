@@ -13,6 +13,7 @@
 }
 
 body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: var(--clr-piano-bg);
     min-height: 100vh;
     display: grid;
@@ -32,9 +33,17 @@ body {
 .control-panel {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     /* border: 2px solid black; */
     height: 30%;
+    border-radius: .5em .5em 0 0;
+    /* background-color: var(--clr-keys-white); */
+    /* box-shadow: inset -8px -8px 15px hsl(0, 0%, 75%), inset 8px 8px 15px hsl(0, 0%, 37%); */
+}
+
+.piano_screen {
+    height: 100%;
+    width: 50%;
     border-radius: .5em .5em 0 0;
     /* background-color: var(--clr-keys-white); */
     box-shadow: inset -8px -8px 15px hsl(0, 0%, 75%), inset 8px 8px 15px hsl(0, 0%, 37%);
@@ -45,7 +54,7 @@ body {
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .octave_number {
@@ -120,10 +129,18 @@ body {
     gap: .3em;
 } */
 
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .white__key {
     /* position: relative; */
+    font-size: 1.2rem;
     width: calc(100% / 7);
     background-color: var(--clr-keys-white);
+    color: black;
     box-shadow: 0px 0px 5px inset hsl(0, 0%, 70%), -6px -15px 8px inset hsl(0, 0%, 30%);
     transition: all .1s ease;
 }
@@ -141,6 +158,7 @@ body {
 }
 
 .black__key {
+    font-size: 1rem;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -150,6 +168,7 @@ body {
     width: 8%;
     height: 55%;
     background-color: hsl(0, 0%, 20%);
+    color: white;
     box-shadow: inset -5px -10px 2px hsl(0, 0%, 0%), 5px 0px 2px inset hsl(0, 0%, 0%);
     transition: all .1s ease;
 }
@@ -177,6 +196,16 @@ body {
 
 .a_sharp {
     right: 10%;
+}
+
+.key_control {
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 30%;
+    padding: .5em;
+    /* box-shadow: -5px -5px 12px rgba(211, 211, 211, 0.5), 5px 5px 12px rgba(0, 0, 0, 0.2); */
+    box-shadow: var(--bxs-top-left), var(--bxs-bottom-right);
+    /* var(--bxs-bottom-right) */
 }
 
 @media screen and (max-width: 412px) {

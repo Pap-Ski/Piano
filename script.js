@@ -1,5 +1,15 @@
 let allKeys = document.querySelectorAll(".keys > div");
 
+allKeys.forEach((key) => {
+  let keyControl = document.createElement("p");
+  keyControl.className = "key_control";
+  let keyControlText = document.createTextNode(
+    key.getAttribute("data-key").toUpperCase()
+  );
+  keyControl.append(keyControlText);
+  key.append(keyControl);
+});
+
 allKeys.forEach((key) => key.addEventListener("click", playNoteOnClick));
 
 // Play note when note is clicked
@@ -17,8 +27,10 @@ function playNoteOnKeyDown(e) {
   if (e.repeat) return;
   allKeys.forEach((key) => {
     let audio = key.children[0];
-
-    if (e.key === key.getAttribute("data-key")) {
+    if (
+      e.key === key.getAttribute("data-key") ||
+      e.key === key.getAttribute("data-key").toLowerCase()
+    ) {
       audio.currentTime = 0;
       audio.play();
       console.log(audio);
