@@ -35,6 +35,8 @@ function animateKey(key) {
   });
 }
 
+// CHANGING THE OCTAVE OF THE NOTES
+
 let incOctave = document.querySelector("#incOctave");
 let decOctave = document.querySelector("#decOctave");
 let minOct = 3;
@@ -69,8 +71,9 @@ decOctave.addEventListener("click", () => {
   }
 });
 
-// CHANGING THE OCTAVE OF THE NOTES
-/// Done by changing the numeric character in the audio src string with the user's preference
+/// Every note audio has a digit attached to the note to signify the type octave it is in
+/// Had to loop through the src of the audio from behind to change that numeric character
+/// to the user's preferred octave
 function changeAudioSrc(audioParent) {
   let noteSound = audioParent.children[0];
   let noteSoundArr = noteSound.src.split("");
