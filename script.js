@@ -68,28 +68,32 @@ incOctave.addEventListener("click", () => {
   octaveNumber.textContent++;
   if (octaveNumber.textContent > maxOct) {
     octaveNumber.textContent--;
-    return;
-  } else if (octaveNumber.textContent === maxOct) {
-    incOctave.disabled = true; // not working
-  } else {
-    allKeys.forEach((key) => {
-      changeAudioSrc(key);
-    });
   }
+  if (octaveNumber.textContent == maxOct) {
+    incOctave.disabled = true;
+  }
+  if (octaveNumber.textContent > minOct) {
+    decOctave.disabled = false;
+  }
+  allKeys.forEach((key) => {
+    changeAudioSrc(key);
+  });
 });
 
 decOctave.addEventListener("click", () => {
   octaveNumber.textContent--;
   if (octaveNumber.textContent < minOct) {
     octaveNumber.textContent++;
-    return;
-  } else if (octaveNumber.textContent === minOct) {
-    decOctave.disabled = true; // not working
-  } else {
-    allKeys.forEach((key) => {
-      changeAudioSrc(key);
-    });
   }
+  if (octaveNumber.textContent == minOct) {
+    decOctave.disabled = true;
+  }
+  if (octaveNumber.textContent < maxOct) {
+    incOctave.disabled = false;
+  }
+  allKeys.forEach((key) => {
+    changeAudioSrc(key);
+  });
 });
 
 /// Every note audio has a digit attached to the note to signify the type octave it is in
