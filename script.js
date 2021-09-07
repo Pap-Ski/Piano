@@ -23,6 +23,7 @@ function playNoteOnClick(e) {
 
 // Play note when key is pushed down
 document.addEventListener("keydown", playNoteOnKeyDown);
+document.addEventListener("touchstart", playNoteOnKeyDown);
 function playNoteOnKeyDown(e) {
   if (e.repeat) return;
   allKeys.forEach((key) => {
