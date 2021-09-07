@@ -1,10 +1,11 @@
 :root {
-    /* --clr-piano-bg: radial-gradient( rgb(255, 255, 255), rgb(148, 189, 148)); */
-    --clr-piano-bg: hsl(0, 1%, 68%);
+    --hue: 0;
+    --saturation: 1%;
+    --clr-piano-bg: hsl(var(--hue), var(--saturation), 68%);
     --clr-keys-white: rgb(255, 255, 255);
     --clr-keys-black: rgb(0, 0, 0);
-    --bxs-bottom-right: 12px 12px 16px 0 hsla(0, 0%, 0%, 0.25);
-    --bxs-top-left: -8px -8px 12px 0 hsla(0, 0%, 100%, 0.3);
+    --bxs-bottom-right: 8px 8px 12px 0 hsla(var(--hue), var(--saturation), 0%, 0.25);
+    --bxs-top-left: -8px -8px 12px 0 hsla(var(--hue), var(--saturation), 100%, 0.3);
 }
 
 * {
@@ -42,7 +43,7 @@ body {
     height: 100%;
     width: 50%;
     border-radius: .5em .5em 0 0;
-    box-shadow: inset -8px -8px 15px hsl(0, 0%, 75%), inset 8px 8px 15px hsl(0, 0%, 37%);
+    box-shadow: inset var(--bxs-top-left), inset var(--bxs-bottom-right);
 }
 
 .octave_panel {
@@ -141,7 +142,7 @@ body {
     background-color: var(--clr-keys-white);
     color: var(--clr-keys-black);
     box-shadow: 0px 0px 5px inset hsl(0, 0%, 70%), -6px -15px 8px inset hsl(0, 0%, 30%);
-    transition: all .3s ease;
+    transition: all .1s ease;
 }
 
 .white:last-child {
@@ -163,7 +164,7 @@ body {
     background-color: hsl(0, 0%, 20%);
     color: var(--clr-keys-white);
     box-shadow: inset -5px -10px 2px var(--clr-keys-black), 5px 0px 2px inset var(--clr-keys-black);
-    transition: all .3s ease;
+    transition: all .1s ease;
 }
 
 .black.press {
