@@ -23,21 +23,29 @@ function playNoteOnClick(e) {
 
 // Play note when key is pushed down
 document.addEventListener("keydown", playNoteOnKeyDown);
-document.addEventListener("touchstart", playNoteOnKeyDown);
 function playNoteOnKeyDown(e) {
-  if (e.repeat) return;
+  // if (e.repeat) return;
   allKeys.forEach((key) => {
     let audio = key.children[0];
     if (
       e.key === key.getAttribute("data-key") ||
-      e.key === key.getAttribute("data-key").toLowerCase()
+      e.key === key.getAttribute("data-key").toUpperCase()
     ) {
       audio.currentTime = 0;
       audio.play();
-      console.log(audio);
       animateKey(key);
     }
   });
+}
+
+allKeys.forEach((key) => {
+  key.addEventListener("touchstart", playNoteOnTouch);
+});
+function playNoteOnTouch(e) {
+  let audio = this.children[0];
+  audio.currentTime = 0;
+  audio.play();
+  animateKey(this);
 }
 
 // Add class to style note when stroke
