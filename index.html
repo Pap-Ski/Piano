@@ -20,53 +20,78 @@
         <div class="piano_screen"></div>
         <div class="octave_panel">
           <button id="incOctave" class="change_octave up"></button>
-          <p class="octave_number">1</p>
-          <button disabled id="decOctave" class="change_octave down"></button>
+          <p class="octave_number">4</p>
+          <button id="decOctave" class="change_octave down"></button>
         </div>
       </div>
       <div class="keys">
-        <div data-key="a" id="note_c" class="white key">
-          <audio src="sounds/C - 1.mp3" type="audio/mpeg"></audio>
+        <div data-key="a" data-note="C" id="note_c" class="white key">
+          <audio src="sounds/C - 4.mp3" type="audio/mpeg"></audio>
         </div>
-        <div data-key="w" id="note_c-sharp" class="black key c_sharp">
-          <audio src="sounds/Cs - 1.mp3" type="audio/mpeg"></audio>
-        </div>
-
-        <div data-key="s" id="note_d" class="white key">
-          <audio src="sounds/D - 1.mp3" type="audio/mpeg"></audio>
-        </div>
-        <div data-key="e" id="note_d-sharp" class="black key d_sharp">
-          <audio src="sounds/Ds - 1.mp3" type="audio/mpeg"></audio>
+        <div
+          data-key="w"
+          data-note="C#"
+          id="note_c-sharp"
+          class="black key c_sharp"
+        >
+          <audio src="sounds/Cs - 4.mp3" type="audio/mpeg"></audio>
         </div>
 
-        <div data-key="d" id="note_e" class="white key">
-          <audio src="sounds/E - 1.mp3" type="audio/mpeg"></audio>
+        <div data-key="s" data-note="D" id="note_d" class="white key">
+          <audio src="sounds/D - 4.mp3" type="audio/mpeg"></audio>
         </div>
-        <div data-key="f" id="note_f" class="white key">
-          <audio src="sounds/F - 1.mp3" type="audio/mpeg"></audio>
-        </div>
-        <div data-key="y" id="note_f-sharp" class="black key f_sharp">
-          <audio src="sounds/Fs - 1.mp3" type="audio/mpeg"></audio>
-        </div>
-
-        <div data-key="h" id="note_g" class="white key">
-          <audio src="sounds/G - 1.mp3" type="audio/mpeg"></audio>
-        </div>
-        <div data-key="u" id="note_g-sharp" class="black key g_sharp">
-          <audio src="sounds/Gs - 1.mp3" type="audio/mpeg"></audio>
+        <div
+          data-key="e"
+          data-note="D#"
+          id="note_d-sharp"
+          class="black key d_sharp"
+        >
+          <audio src="sounds/Ds - 4.mp3" type="audio/mpeg"></audio>
         </div>
 
-        <div data-key="j" id="note_a" class="white key">
-          <audio src="sounds/A - 1.mp3" type="audio/mpeg"></audio>
+        <div data-key="d" data-note="E" id="note_e" class="white key">
+          <audio src="sounds/E - 4.mp3" type="audio/mpeg"></audio>
         </div>
-        <div data-key="i" id="note_a-sharp" class="black key a_sharp">
-          <audio src="sounds/As - 1.mp3" type="audio/mpeg"></audio>
+        <div data-key="f" data-note="F" id="note_f" class="white key">
+          <audio src="sounds/F - 4.mp3" type="audio/mpeg"></audio>
+        </div>
+        <div
+          data-key="y"
+          data-note="F#"
+          id="note_f-sharp"
+          class="black key f_sharp"
+        >
+          <audio src="sounds/Fs - 4.mp3" type="audio/mpeg"></audio>
         </div>
 
-        <div data-key="k" id="note_b" class="white key">
-          <audio src="sounds/B - 1.mp3" type="audio/mpeg"></audio>
+        <div data-key="h" data-note="G" id="note_g" class="white key">
+          <audio src="sounds/G - 4.mp3" type="audio/mpeg"></audio>
         </div>
-        <div data-key="l" id="note_c-last" class="white key">
+        <div
+          data-key="u"
+          data-note="G#"
+          id="note_g-sharp"
+          class="black key g_sharp"
+        >
+          <audio src="sounds/Gs - 4.mp3" type="audio/mpeg"></audio>
+        </div>
+
+        <div data-key="j" data-note="A" id="note_a" class="white key">
+          <audio src="sounds/A - 4.mp3" type="audio/mpeg"></audio>
+        </div>
+        <div
+          data-key="i"
+          data-note="A#"
+          id="note_a-sharp"
+          class="black key a_sharp"
+        >
+          <audio src="sounds/As - 4.mp3" type="audio/mpeg"></audio>
+        </div>
+
+        <div data-key="k" data-note="B" id="note_b" class="white key">
+          <audio src="sounds/B - 4.mp3" type="audio/mpeg"></audio>
+        </div>
+        <div data-key="l" data-note="C#" id="note_c-last" class="white key">
           <audio src="sounds/C - 2.mp3" type="audio/mpeg"></audio>
         </div>
       </div>

@@ -58,43 +58,55 @@ function animateKey(key) {
 
 // CHANGING THE OCTAVE OF THE NOTES
 
-let incOctave = document.querySelector("#incOctave");
-let decOctave = document.querySelector("#decOctave");
+let incOctaveBtn = document.querySelector("#incOctave");
+let decOctaveBtn = document.querySelector("#decOctave");
 let minOct = 1;
 let maxOct = 7;
 let octaveNumber = document.querySelector(".octave_number");
 
-incOctave.addEventListener("click", () => {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowUp") {
+    incOctave();
+  } else if (e.key === "ArrowDown") {
+    decOctave();
+  }
+});
+
+incOctaveBtn.addEventListener("click", incOctave);
+
+function incOctave() {
   octaveNumber.textContent++;
   if (octaveNumber.textContent > maxOct) {
     octaveNumber.textContent--;
   }
   if (octaveNumber.textContent == maxOct) {
-    incOctave.disabled = true;
+    incOctaveBtn.disabled = true;
   }
   if (octaveNumber.textContent > minOct) {
-    decOctave.disabled = false;
+    decOctaveBtn.disabled = false;
   }
   allKeys.forEach((key) => {
     changeAudioSrc(key);
   });
-});
+}
 
-decOctave.addEventListener("click", () => {
+decOctaveBtn.addEventListener("click", decOctave);
+
+function decOctave() {
   octaveNumber.textContent--;
   if (octaveNumber.textContent < minOct) {
     octaveNumber.textContent++;
   }
   if (octaveNumber.textContent == minOct) {
-    decOctave.disabled = true;
+    decOctaveBtn.disabled = true;
   }
   if (octaveNumber.textContent < maxOct) {
-    incOctave.disabled = false;
+    incOctaveBtn.disabled = false;
   }
   allKeys.forEach((key) => {
     changeAudioSrc(key);
   });
-});
+}
 
 /// Every note audio has a digit attached to the note to signify the type octave it is in
 /// Had to loop through the src of the audio from behind to change that numeric character
