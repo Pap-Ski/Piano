@@ -52,10 +52,12 @@ body {
     align-items: center;
     justify-content: space-around;
     position: relative;
+    top: 10%;
 }
 
-/* .octave_panel::before {
+.octave_panel::before {
     content: "CHANGE OCTAVE";
+    font-size: clamp(.5rem, .5vw + .5rem, 2rem);
     text-align: center;
     letter-spacing: 2px;
     position: absolute;
@@ -64,7 +66,7 @@ body {
     padding: .5em;
     border-radius: 2rem;
     box-shadow: inset var(--bxs-top-left), inset var(--bxs-bottom-right);
-} */
+}
 
 .octave_number {
     border-radius: 2rem;
