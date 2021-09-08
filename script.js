@@ -60,8 +60,8 @@ function animateKey(key) {
 
 let incOctave = document.querySelector("#incOctave");
 let decOctave = document.querySelector("#decOctave");
-let minOct = 3;
-let maxOct = 5;
+let minOct = 1;
+let maxOct = 7;
 let octaveNumber = document.querySelector(".octave_number");
 
 incOctave.addEventListener("click", () => {
