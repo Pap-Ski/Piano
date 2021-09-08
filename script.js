@@ -101,10 +101,14 @@ decOctave.addEventListener("click", () => {
 /// to the user's preferred octave
 function changeAudioSrc(audioParent) {
   let noteSound = audioParent.children[0];
+  let octaveNum = octaveNumber.textContent;
   let noteSoundArr = noteSound.src.split("");
   for (let i = noteSoundArr.length - 2; i >= 0; i--) {
     if (!isNaN(noteSoundArr[i])) {
-      noteSoundArr[i] = octaveNumber.textContent;
+      noteSoundArr[i] = octaveNum;
+      if (audioParent.id === "note_c-last") {
+        noteSoundArr[i] = ++octaveNum;
+      }
       break;
     }
   }
