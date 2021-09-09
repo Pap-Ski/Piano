@@ -40,10 +40,20 @@ body {
 }
 
 .piano_screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    letter-spacing: .3em;
     height: 100%;
     width: 50%;
     border-radius: .5em .5em 0 0;
     box-shadow: inset var(--bxs-top-left), inset var(--bxs-bottom-right);
+}
+
+.piano_screen p {
+    text-shadow: 1px 1px 1px rgb(224, 224, 224), -1px -1px 1px rgb(0, 0, 0);
+    color: var(--clr-piano-bg)
 }
 
 .octave_panel {
